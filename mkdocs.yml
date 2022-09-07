@@ -2,26 +2,20 @@
 site_name: RCPCH Epilepsy 12 - Documentation
 site_description: RCPCH Epilepsy 12 - Documentation Site
 site_author: The Royal College of Paediatrics and Child Health
-site_url: https://e12.rcpch.tech
+site_url: https://docs.epilepsy12.rcpch.ac.uk
 
 # copyright information which is shown in the footer
 copyright: Copyright &copy; 2022 Royal College of Paediatrics and Child Health (RCPCH)
 
 # these lines configure the 'GitHub repo' widget on the top right
-repo_url: https://github.com/rcpch/rcpch-audit-engine
-repo_name: rcpch/rcpch-audit-engine
-edit_uri: blob/main/docs
+repo_url: https://github.com/rcpch/epilepsy12-documentation
+repo_name: rcpch/epilepsy12-documentation
+edit_uri: blob/live/docs
 
 # `mkdocs serve` serves the documentation at PORT 8001 (to avoid clashing with Django on 8000)
 dev_addr: "127.0.0.1:8001"
 
-# `mkdocs build` will create the static site in the following directory
-site_dir: staticfiles/docs-site
-
-# this is a requirement for serving MkDocs via Django
-use_directory_urls: false
-
-
+# theme settings, fonts, colours
 theme:
   name: material
   #custom_dir: rcpch-theme
@@ -38,7 +32,6 @@ theme:
     # Light mode only for now
       scheme: default
 
-
   font:
     text: Montserrat
     code: Roboto Mono
@@ -46,9 +39,11 @@ theme:
   # favicon: _assets/_images/dynamic-child-favicon.png
   logo: _assets/_images/rcpch_logo.png
 
+# mkdocs plugins
 plugins:
   - search
 
+# additional markdown features
 markdown_extensions:
   - abbr
   - admonition
@@ -65,7 +60,7 @@ markdown_extensions:
   - toc:
       permalink: true
 
-
+# set extra CSS file
 extra_css:
   - _assets/_stylesheets/extra.css
 
@@ -84,6 +79,8 @@ nav:
   - Admin User Guide:
     - 'admin-users/admin-user-guide.md'
   - Development:
-    - 'development/development.md'
+    - 'development/getting-started.md'
+    - 'development/docker.md'
+    - 'development/documentation.md'
   - Legal:
     - 'legal/legal.md'
