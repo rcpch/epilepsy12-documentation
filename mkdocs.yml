@@ -80,7 +80,9 @@ nav:
     - 'admin-users/admin-user-guide.md'
   - Development:
     - 'development/getting-started.md'
-    - 'development/docker.md'
+    - 'development/docker-setup.md'
     - 'development/documentation.md'
+    - 'development/manual-setup.md'
   - Legal:
     - 'legal/legal.md'
+    - 'legal/license.md'

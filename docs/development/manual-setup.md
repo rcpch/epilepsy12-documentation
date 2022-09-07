@@ -1,34 +1,13 @@
 ---
-title: Development Setup using Docker
-reviewers: 
+title: Manual Dev Setup
+reviewers: Dr Marcus Baw
 ---
 
-# Development Setup using Docker and Docker Compose
+If you prefer to set up a development environment manually, here are the steps. Please note that we do not provide support for developers using a bespoke setup, only the Docker development environment is supported.
 
-In order to simplify the development environment setup and provide greater consistency between development and production environments, we have packaged the application as a Docker image. This means that you don't need to worry about conflicts of Python versions, Python library versions, or Python virtual environments. Everything is inside the Docker container.
+This manual approach will require you to have much more familiarity with configuring PostgresQL, Django, and Python to achieve your aims, and is not for beginners.
 
-* Install Docker on your development machine. https://docs.docker.com/get-docker/
-  
-* Clone this repository to your code folder:  
-`git clone https://github.com/rcpch/rcpch-audit-engine.git`
-
-* Navigate into the folder  
-`cd rcpch-audit-engine`
-
-* Start the development environment  
-`docker compose up`
-
-> Note that the command changed from `docker-compose` to `docker <space> compose` with more recent Docker versions.
-
-This should create a container for the Django app with the correct Python version, install all dependencies, connect it to a Postgres container, set up the DB connection, migrate and seed the database. The entire process takes less than 30 seconds.
-
-* View the application in a browser at <http://0.0.0.0:8000/>
-
-Changes you make in your development folder are **automatically synced to inside the Docker container**, and will show up in the application right away. This Docker setup is quite new so please do open an issue if there is anything that doesn't seem to work properly. Suggestions and feature requests welcome.
-
-### Manual Development Setup
-
-#### Install PostgreSQL and create the database with the correct credentials
+## Install PostgreSQL and create the database with the correct credentials
 
 You will need the [Postgresql](https://www.postgresql.org/) database, which can be installed natively on your development machine, or (recommended) can be installed using Docker.
 
@@ -44,7 +23,7 @@ docker run --name epilepsy12postgres \
     -d postgres
 ```
 
-#### Install correct Python version
+## Install the correct Python version
 
 If you don't have python 3.10 installed already, you will need it.
 
@@ -55,9 +34,6 @@ pyenv install 3.10.0
 ```
 
 > On some platforms, you will get errors at build-time, which indicates you need to install some dependencies which are required for building the Python binaries locally. Rather than listing these here, where they may become out of date, please refer to the [pyenv wiki](https://github.com/pyenv/pyenv/wiki) which covers this in detail.
-
-We recommend the use of a tool such as [pyenv](https://github.com/pyenv/pyenv) to assist with managing multiple Python versions and their accompanying virtualenvs.
-
 
 Then create a virtual environment:
 
@@ -72,25 +48,28 @@ git clone https://github.com/rcpch/rcpch-audit-engine.git
 cd rcpch-audit-engine
 ```
 
-Then install all the requirements. Note you can't do this without PostgreSQL already installed.
+Then install all the requirements. Note you can't do this without PostgreSQL already installed first.
 
 ```console
 pip install -r requirements/development-requirements.txt
 ```
 
-#### Initialize the environment variables
+## Initialize the environment variables
 
 ```console
 source example.env
 ```
 
-#### Prepare the database for use
+!!! danger
+    The included example environment variables are not secure and must never be used in production.
+
+## Prepare the database for use
 
 ```console
 s/migrate
 ```
 
-#### Create superuser to enable logging into admin section
+## Create superuser to enable logging into admin section
 
 ```console
 python manage.py createsuperuser
@@ -100,7 +79,7 @@ Then follow the command line prompts to create the first user
 
 Further users can subsequently be created in the Admin UI
 
-#### Running the server
+## Running the server
 
 Navigate to the epilepsy12 outer folder and run the server:
 
@@ -119,7 +98,7 @@ chmod +x ./s/seed
 chmod +x ./s/init
 ```
 
-#### Seeding the Database
+## Seeding the Database
 
 You will need to see the hospitals table with hospitals from the Constants folder.
 
@@ -151,14 +130,14 @@ If you want to seed with all these, there is a short cut in the start folder:
 s/seed
 ```
 
-#### Testing (optional step)
+#### Running the tests locally
 
-We have used the coverage package to test our models.
+We have used the coverage package to test our models. It is already in our development requirements, but if you don't have it installed, install it with `pip install coverage`
 
+Run all the tests
 ```console
-pip install coverage
 coverage run manage.py test
 coverage html
 ```
 
-If the ```htmlcov/index.html``` is opened in the browser, gaps in outstanding testing of the models can be found.
+If the `htmlcov/index.html` is opened in the browser, gaps in outstanding testing of the models can be found.

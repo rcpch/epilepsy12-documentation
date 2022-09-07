@@ -13,29 +13,24 @@ National clinical audits are there to collect diagnosis and care process data on
 
 The RCPCH Audit Engine is a [Django](https://www.djangoproject.com/) 4.0 project, using [Semantic UI](https://semantic-ui.com/) for the user interface framework. It aims to standardise those elements of a national audit that can be standardised, such as the concept of a Case (patient), Registration of cases to the audit, and management of researchers and administration users.
 
-## Epilepsy12
+## Stated Aims of the Audit
 
+- Continue to measure and improve care and outcomes for children and young people with
+  epilepsies
+- Include all children and young people with a new onset of epilepsy,
+- Enable continuous patient ascertainment,
+- Use a pragmatic and concise dataset,
+- Incorporate NICE Quality Standards alongside metrics about mental health, education and
+  transition to adult services,
+- Provide services with local real-time patient- and service-level reporting.
 
+## Quality Improvement
 
+- Supporting regional and national quality improvement activities
+- Epilepsy Quality Improvement Programme (EQIP)
+- Involving children and young people
 
-### Stated Aims of the Audit
-
-* Continue to measure and improve care and outcomes for children and young people with
-epilepsies
-* Include all children and young people with a new onset of epilepsy,
-* Enable continuous patient ascertainment,
-* Use a pragmatic and concise dataset,
-* Incorporate NICE Quality Standards alongside metrics about mental health, education and
-transition to adult services,
-* Provide services with local real-time patient- and service-level reporting.
-
-#### Quality Improvement
-
-* Supporting regional and national quality improvement activities
-* Epilepsy Quality Improvement Programme (EQIP)
-* Involving children and young people
-
-#### There are 12 key performance indicators
+## There are 12 key performance indicators
 
 1. Input into care from a paediatrician with expertise in epilepsies,
 2. Input into care from an epilepsy specialist nurse (ESNs),
@@ -47,17 +42,10 @@ transition to adult services,
 7. Access to magnetic resonance imaging (MRI),
 8. Accuracy of diagnosis,
 9. (a) Discussion of the risks where sodium valproate is used in treatment for girls aged 9 and over,
-and  
-(b) girls and young women prescribed sodium valproate
+   and  
+   (b) girls and young women prescribed sodium valproate
 10. Comprehensive care plan that is updated and agreed with the patient,
 11. Documented evidence of all key elements of care planning content,
 12. Record of a school individual healthcare plan.
 
-
-Clinician User Guide
-
-Admin User Guide
-
 Feedback and Feature Requests
-
-Development
