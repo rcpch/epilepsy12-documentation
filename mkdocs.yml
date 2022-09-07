@@ -1,0 +1,89 @@
+# main site metadata and titles
+site_name: RCPCH Epilepsy 12 - Documentation
+site_description: RCPCH Epilepsy 12 - Documentation Site
+site_author: The Royal College of Paediatrics and Child Health
+site_url: https://e12.rcpch.tech
+
+# copyright information which is shown in the footer
+copyright: Copyright &copy; 2022 Royal College of Paediatrics and Child Health (RCPCH)
+
+# these lines configure the 'GitHub repo' widget on the top right
+repo_url: https://github.com/rcpch/rcpch-audit-engine
+repo_name: rcpch/rcpch-audit-engine
+edit_uri: blob/main/docs
+
+# `mkdocs serve` serves the documentation at PORT 8001 (to avoid clashing with Django on 8000)
+dev_addr: "127.0.0.1:8001"
+
+# `mkdocs build` will create the static site in the following directory
+site_dir: staticfiles/docs-site
+
+# this is a requirement for serving MkDocs via Django
+use_directory_urls: false
+
+
+theme:
+  name: material
+  #custom_dir: rcpch-theme
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.top
+    - navigation.expand
+    # - toc.integrate
+
+  palette:
+    # Light mode only for now
+      scheme: default
+
+
+  font:
+    text: Montserrat
+    code: Roboto Mono
+
+  # favicon: _assets/_images/dynamic-child-favicon.png
+  logo: _assets/_images/rcpch_logo.png
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+
+extra_css:
+  - _assets/_stylesheets/extra.css
+
+# footer links and variables
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/rcpchtweets
+    - icon: fontawesome/brands/github
+      link: https://github.com/rcpch
+      
+nav:
+  - Home: 'index.md'
+  - Clinician User Guide:
+    - 'clinician-users/clinician-user-guide.md'
+  - Admin User Guide:
+    - 'admin-users/admin-user-guide.md'
+  - Development:
+    - 'development/development.md'
+  - Legal:
+    - 'legal/legal.md'
