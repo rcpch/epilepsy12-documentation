@@ -1,7 +1,7 @@
 # Epilepsy 12 Documentation
 
-This is a [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) project containing the source text for the Epilepsy 12 documentation site which is build and deployed at:
+This is a [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) project containing the source text for the Epilepsy 12 documentation site which is built and deployed at:
 
-https://rcpch.github.io/epilepsy12-documentation/
+https://epilepsy12docs.rcpch.tech/
 
-Please visit that site for all documentation including developer documentation, contributing information, etc.
+Please visit that site for all documentation including user guides, admin guides, developer documentation, contributing information, etc.

@@ -12,7 +12,7 @@ repo_url: https://github.com/rcpch/epilepsy12-documentation
 repo_name: rcpch/epilepsy12-documentation
 edit_uri: blob/live/docs
 
-# `mkdocs serve` serves the documentation at PORT 8001 (to avoid clashing with Django on 8000)
+# `mkdocs serve` serves the documentation at custom port (to avoid clashing with other services we commonly run)
 dev_addr: "127.0.0.1:8001"
 
 # theme settings, fonts, colours
@@ -83,6 +83,8 @@ nav:
     - 'development/docker-setup.md'
     - 'development/documentation.md'
     - 'development/manual-setup.md'
+    - 'development/code-style.md'
   - Legal:
     - 'legal/legal.md'
     - 'legal/license.md'
+    - 'legal/privacy-notice.md'

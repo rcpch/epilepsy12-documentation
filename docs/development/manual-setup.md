@@ -1,5 +1,5 @@
 ---
-title: Manual Dev Setup
+title: Manual dev setup
 reviewers: Dr Marcus Baw
 ---
 
@@ -61,7 +61,7 @@ source example.env
 ```
 
 !!! danger
-    The included example environment variables are not secure and must never be used in production.
+The included example environment variables are not secure and must never be used in production.
 
 ## Prepare the database for use
 
@@ -130,11 +130,12 @@ If you want to seed with all these, there is a short cut in the start folder:
 s/seed
 ```
 
-#### Running the tests locally
+## Running the tests locally
 
 We have used the coverage package to test our models. It is already in our development requirements, but if you don't have it installed, install it with `pip install coverage`
 
 Run all the tests
+
 ```console
 coverage run manage.py test
 coverage html

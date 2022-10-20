@@ -1,6 +1,6 @@
 # This Action builds the documentation site in mkdocs, and pushes it to the gh-pages branch, from where it is deployed
-# GitHub pages is the LIVE SITE: https://rcpch.github.io/epilepsy12-documentation
-# Azure Static Web Sites is the LIVE site https://docs.epilepsy12.rcpch.ac.uk/
+# GitHub pages is the backup site: https://rcpch.github.io/epilepsy12-documentation
+# Azure Static Web Sites is the main site: https://epilepsy12docs.rcpch.tech/
 
 name: build-and-deploy-to-gh-pages.yml
 on:

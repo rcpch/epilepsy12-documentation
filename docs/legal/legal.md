@@ -16,7 +16,7 @@ All documentation and textual work (such as this documentation site) is licensed
 Our licensing arrangements do not affect the licenses of any underlying technologies such as Django ([3-clause BSD](https://docs.djangoproject.com/en/4.1/faq/general/)) MkDocs ([BSD](https://www.mkdocs.org/about/license/#mkdocs-license-bsd)) or Python ([PSF](https://docs.python.org/3/license.html#psf-license)). However our license choice is compatible with these upstream licensing arrangements.
 
 ## Privacy Notice
-
+_see_ [Privacy Notice](../privacy-notice)
 
 ## Information Governance
 

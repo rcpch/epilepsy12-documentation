@@ -15,13 +15,13 @@ In order to develop the platform you should have some familiarity with both of t
 
 We use Git for local and remote version control, and GitHub to host our source code. We make use of the GitHub Issues feature for tracking our roadmap, features, and bugs. We use GitHub Pages for publishing some of our websites. We also use GitHub Projects to plan work.
 
-We make use of Git branches extensively to manage parallel and concurrent workstreams. Development should alsoways be done in a new branch and only merged with the live branch once suitable testing, review, and authorisation has occurred.
+We make use of Git branches extensively to manage parallel and concurrent workstreams. Development should always be done in a new branch and only merged with the live branch once suitable testing, review, and authorisation has occurred.
 
 Deployment of our source code is automated where possible, mostly using GitHub Actions, in which a workflow file determines the deployment script, ensuring repeatable and dependable deployments.
 
 ## Open Source
 
-The entire output of the RCPCH development team is open source. We firmly believe in the importance of open source especially where it applies in the medical domain, which is a special humanitarian case in software terms. Read more about this philosphy here - [Open Source is The Only Way For Medicine](https://blog.bawmedical.co.uk/open-source-is-the-only-way-for-medicine)
+The entire output of the RCPCH Incubator development team is open source. We firmly believe in the importance of open source especially where it applies in the medical domain, which is a special humanitarian case in software terms. Read more about this philosophy here - [Open Source is The Only Way For Medicine](https://blog.bawmedical.co.uk/open-source-is-the-only-way-for-medicine)
 
 ## Code Quality
 
