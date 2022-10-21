@@ -36,19 +36,27 @@ In most circumstances this is simply `pip install mkdocs-material`, but if you h
 MkDocs and Material for MkDocs (the MkDocs theme we are using) have a host of features for making beautiful, practical, functional and easily navigable documentation.
 
 ### Markdown
+
 Fundamental to the way the documentation works is the use of a simple set of text annotations called '[Markdown](https://daringfireball.net/projects/markdown/)', which are easily readable and editable as text files but can be compiled into HTML for web viewing. MarkDown is hugely popular across the web for rapid entry of web-native formatted text, being the basis of much of GitHub, StackOverflow, and Discourse's functionality.
 
 Markdown uses characters like asterisks (`*`), hashes (`#`) and others, to effect its formatting. For example: `**bold**` to denote **bold** text. It's simple to get used to and, once you're used to it, very productive too. One advantage is that formatted text stays where it's been put, unlike with some word processors in which the GUI formatting tools can have you chansing formatting changes all over a document.
 
+#### Online editing of Markdown
+
+If you are new to Markdown editing, you can use GitHub's interface itself to edit online, by clicking the 'pencil' edit icon in the top right corner of any source code page. There are also external tools like [Prose.io](http://prose.io/) and [StackEdit](https://stackedit.io/) which give you a nice interface for editing MarkDown online, and will sync the changes with GitHub for you. If you need help getting set up, [contact us in the Signal chat](../contact/contact.md).
+
 If Markdown seems daunting then another option is simply to edit the content in the word processor of your choice and then ask one of the RCPCH Incubator team to convert it to Markdown and add it to the documentation.
 
 ### Material for MkDocs
+
 On top of the basic features of Markdown, MkDocs and the Material theme adds all the nice website appearance and many additional features for making beautiful documentation sites.
 
 A good overview can be had from looking at the [Material for MkDocs Reference section](https://squidfunk.github.io/mkdocs-material/reference/) and from copying existing code in the documentation that does what you need.
 
 ### MkDocs
+
 If you can't find functionality documented in the Material for MkDocs theme website, this is usually because it is functionality which comes from MkDocs, the underlying framework, itself. See the [MkDocs](https://www.mkdocs.org/user-guide/writing-your-docs/#writing-with-markdown) site for these features.
 
 ### Pymdownx extensions
+
 Some of the features such as [Keys](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#keys) come from extensions like [Pymdownx](https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/)
