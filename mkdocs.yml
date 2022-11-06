@@ -112,6 +112,7 @@ nav:
     - 'development/documentation.md'
     - 'development/manual-setup.md'
     - 'development/code-style.md'
+    - 'development/rcpch-audit-engine-design.md'
   - Legal:
     - 'legal/legal.md'
     - 'legal/license.md'
