@@ -15,11 +15,11 @@ A criticism of the previous imagining of the Epilepsy12 audit, and the rationale
 
 RCPCH have a number of microsites on paediatric topics. To harmonise with the branding of these, Epilepsy12 was to adopt the branding of RCPCH to take advantage of the familiarity that existing users (many of whom are paediatricians) would already have with RCPCH resources.
 
-## Reactivity
+### Reactivity
 
 An important consideration for the Development Board was that any frontend application should therefore be reactive: Django applications typically require the user to complete multiple fields in a form before a submit button is pressed which POSTs the form contents to a form model instance for validation and then persistence in the data model. This is not reactive and this was felt to be counter to the stated aims of the project board that the forms be quick and easy to fill. It also makes it more difficult for different fields to be completed at different times throughout the audit year as different milestones were completed, allowing the user to fill the audit out in any order as things happened, without having to rely on all pieces of required information being present before form submission. This underlined the idea that audit is not linear, and no two children's epilepsy journeys are the same.
 
-### HTMX
+#### HTMX
 
 [HTMX](https://htmx.org) is a small javascript library that uses allows the developer to access the DOM without writing javascript. The core of the library is that it allows the user to issue AJAX requests directly from HTML, facilitating server side rendering of partial html templates rather than triggering a page reload on submit.
 
@@ -160,13 +160,13 @@ def registration_status(request, registration_id):
     return response
 ```
 
-### Scores and Progress
+## Scores and Progress
 
 User progress for each case is stored in the AuditProgress model which is updated each time a field is created or updated. The logic for this is common to all fields and therefore all logic is held in ```epilepsy12/view_folder/common_view_functions.py```.
 
 There are several functions:
 
-#### Response generation
+### Response generation
 
 ```python
 def recalculate_form_generate_response(model_instance, request, context, template, error_message=None):
@@ -176,7 +176,7 @@ This receives a request and model instance from the calling view function with t
 
 Once progress calculations have been performed and the AuditProgress model has been updated, the response object can be constructed and the ```"registration_active"``` custom htmx trigger discussed above can be attached before returning to the calling view function.
 
-#### Request validation and model updating
+### Request validation and model updating
 
 ```python
 def validate_and_update_model(
@@ -196,3 +196,13 @@ Originally used in this way to reduce boiler plate code and update the model wit
 It accepts a request, a model and model primary key, as well as the field name to be updated. If a date field is involved and some comparison of dates is needed, that is added an optional parameter. This then runs a validation on the POSTed data and updates the model with the new value. In the event of invalid data, the model is not updated and a ```ValueError``` is raised with a meaningful message which can be caught in the calling view function through the ```try...except...``` method and passed back to the template to be shown to the user.
 
 Currently error messages largely exist for dates which are impossible (for example inappropriately in the future or where scans are reported before they have been requested), but in due course this will be extended to all errors beyond those that might be anticipated.
+
+## API
+
+The Epilepsy12 Team had originally envisaged an API to allow EHR to Audit communication to reduce the burden of field completion on clinicians and administrative teams. For EHRs nationally to integrate with an Epilepsy12 API for audit submission was not realistic for most trusts and the front end user interface remains the main way the audit will be completed. Django Framework has been added though to include some key endpoints to facilitate EHR to Epilepsy12 communication, particularly with respect of case addition.
+In particular there are 2 endpoints that have been created:
+
+1. ```api/v1/register_case```: accepts POST request of an NHS number of an existing case and hospital ID to register an existing case in Epilepsy12
+2. ```api/v1/add_case_to_hospital_list```: accepts POST request of an NHS Number and HospitalID to create a record of a child in Epilepsy12, associated with a hospital
+
+Other endpoints can be added in due course.
